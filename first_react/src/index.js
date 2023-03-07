@@ -5,7 +5,7 @@ import './index.css';
 
 function Navbar(){
   return(
-    <img src="logo192.png" alt="logo"></img>
+    <img src="logo192.png" alt="logo" width="40px"></img>
   );
 }
 
@@ -31,16 +31,33 @@ function MainContent()
 }
 
 
+function Footer()
+{
+  return(
+    <small>© 2023 Konrad development. All rights reserved</small>
+  );
+}
+
+function Page()
+{
+  return(
+    <div>
+
+      <Navbar></Navbar>
+      <MainContent></MainContent>
+      <Footer></Footer>
+
+    </div>
+  );
+}
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
-
-
-root.render(
+root.render( 
   <React.StrictMode>
 
-    <Navbar></Navbar>
-    <MainContent></MainContent>
+    <Page></Page>
 
   </React.StrictMode>
 );
