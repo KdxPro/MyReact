@@ -1,0 +1,25 @@
+body {
+    background-color: black;
+}
+
+main {
+ background-color: #333;
+
+ margin: auto;
+ width: 500px;
+
+    text-align: center;
+
+}
+
+.header--name {
+    color: azure
+}
+
+.header--job {
+    color: azure
+}
+
+.header--additional {
+    color: azure
+}
