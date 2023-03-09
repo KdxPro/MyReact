@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { Header } from './Header';
-import { MainContent } from './MainContent';
-import { Footer } from './Footer';
+import { Header } from './components/Header';
+import { Main } from './components/Main';
+import { Footer } from './components/Footer';
 
 import "./style.css"
 
@@ -11,7 +11,7 @@ export function App() {
     <div>
 
       <Header />
-      <MainContent />
+      <Main />
       <Footer />
 
     </div>

@@ -1,18 +1,88 @@
+body {
+    margin: 0px;
+
+    background-color: #373841;
+}
+
 .nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    background-color: #21222A;
+
 }
 
-.nav-logo {
+.nav--logo {
     width: 60px;
+    height: 60px;
+
+    margin-left: 30px;
 }
 
-.nav-items {
+.nav--logo_container {
+    display: flex;
+    align-items: center;
+}
+
+.nav--text {
+    margin-left: 10px;
+    color: #61DAFB;
+
+    font-weight: 700px;
+    font-size: 25px;
+}
+
+.nav--items {
     list-style: none;
     display: flex;
+
+    color: #DEEBF8;
+
+    font-weight: 600px;
 }
 
-.nav-items > li {
-    padding: 10px;
+.nav--items > li {
+    margin-right: 10px;
+}
+
+.nav--title {
+    margin-left: 0px;
+    color: #DEEBF8;
+
+    font-weight: 600px;
+}
+
+main {
+    padding: 57px 27px;
+    color: #DEEBF8;
+
+    background-image: url("../public/logo512_half.png");
+    background-repeat: no-repeat;
+    background-position: right 75%;
+    background-size: 150px;
+}
+
+.main--title {
+    margin: 0px;
+    font-size: 39px;
+}
+
+.main--list {
+    margin-top: 40px;
+}
+
+.main--list > li {
+    padding-block: 10px;
+}
+
+
+.main--list > li::marker {
+    color: #61DAFB;
+    font-size: 1.4rem;
+}
+
+footer {
+    color: #DEEBF8;
+    text-align: center;
 }
