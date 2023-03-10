@@ -1,25 +1,105 @@
 body {
-    background-color: black;
+    background-color: #1a1a1a;
+
+    font-family: 'Lucida Grande', sans-serif ;
 }
 
-main {
- background-color: #333;
+.app {
+    background-color: #333;
 
- margin: auto;
- width: 500px;
+    margin: auto;
+    max-width: 600px;
 
+
+    padding-bottom: 10px;
+}
+
+header {
     text-align: center;
+}
 
+.header--picture {
+    width: 100%;
 }
 
 .header--name {
-    color: azure
+    color: azure;
+    margin-bottom: 0px;
 }
 
 .header--job {
-    color: azure
+    color: azure;
+    margin-top: 10px;
+    margin-bottom: 0px;
 }
 
 .header--additional {
-    color: azure
+    color: azure;
+    margin-top: 10px;
+    margin-bottom: 0px;
+    font-size: 12px;
+}
+
+.header--buttons {
+     display: flex;
+     justify-content: space-between;
+     align-items: stretch;
+
+     margin-top: 20px;
+     padding-left: 35px;
+     padding-right: 35px;
+     
+}
+
+.header--buttons > button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: none;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    height: 40px;
+    width: 48%;
+
+    border-radius: 10px;
+}
+
+.header--buttons > button:hover {
+    opacity: 0.8;
+}
+
+.header--buttons > button > img{
+    width: 18px;
+}
+
+.header--buttons > button > span{
+    margin-left: 5px;
+}
+
+.header--buttons > button:first-child {
+    background-color: azure;
+    color: black;
+}
+
+.header--buttons > button:nth-child(2) {
+    background-color: #0e76a8;
+    color: azure;
+}
+
+.about, .interests {
+    color: azure;
+    padding: 0px 35px 0px 35px;
+}
+
+footer {
+    padding-top: 10px;
+
+    border-top: solid;
+    color: #666;
+    font-size: 12px;
+
+    text-align: center;
 }
