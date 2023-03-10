@@ -95,6 +95,10 @@ header {
     padding: 0px 35px 0px 35px;
 }
 
+:is(.about, .interests) > p {
+    font-size: 14px;
+}
+
 footer {
     background-color: #111;
 
