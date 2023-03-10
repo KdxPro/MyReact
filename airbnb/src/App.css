@@ -1,0 +1,76 @@
+body {
+    background-color: #666;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.app {
+    background-color: antiquewhite;
+}
+
+header {
+    /* background-color: blue; */
+
+    height: 100px;
+    padding: 10px;
+
+    box-shadow: 0px 5px 5px #aaa;
+}
+
+header > img{
+    height: 100%;
+}
+
+.heroes {
+    padding: 70px 50px
+}
+
+.heroes > structure{
+    display: flex;
+}
+
+.heroes > p{
+    width: 75%;
+}
+
+.card {
+    font-size: 14px;
+}
+
+.card > img {
+    border-radius: 10px;
+}
+
+.card--stats {
+    display: flex;
+    align-items: center;
+
+    font-size: 12px;
+    color: #666;
+
+}
+
+.card--stats > img{
+    width: 10px;
+}
+
+.card--price {
+    font-weight: bold;
+}
+
+.rectHor {
+    background-color: red;
+    display: flex;
+    align-items: center;
+}
+
+.rectVer {
+    display: flex;
+    flex-direction: column;
+}
+
+.rectVer > * {
+    background-color: blue;
+    height: 50px;
+    width: 50px;
+    margin: 10px;
+}
