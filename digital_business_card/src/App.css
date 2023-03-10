@@ -10,6 +10,7 @@ body {
     margin: auto;
     max-width: 600px;
 
+    border-radius: 10px;
 
     padding-bottom: 10px;
 }
@@ -20,6 +21,8 @@ header {
 
 .header--picture {
     width: 100%;
+
+    border-radius: 10px 10px 0px 0px;
 }
 
 .header--name {
