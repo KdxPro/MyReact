@@ -1,10 +1,6 @@
 import { Heros } from "./Heros";
 
-export function HeroesGrid(props) {
-
-  let maxHeight = Number(props.maxHeight);
-  let maxWidth = Number(props.maxWidth);
-  let maxDev = Number(props.maxDev);
+export function HeroesGrid({maxHeight, maxWidth, maxDev}) {
 
   let objArrayVer = new Array(maxHeight);
   let objArrayVerKey = "";
