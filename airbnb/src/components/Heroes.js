@@ -1,29 +1,10 @@
-function Heros(props) {
-  return(
-
-    <img
-      className={"heros_nr_" + props.nr}
-      src={"https://picsum.photos/200/300.jpg?random=" + props.nr}
-      alt={"heros_nr_" + props.nr + "_picture"} 
-      >
-    </img>
-
-  );
-}
-
+import { HeroesGrid } from "./HeroesGrid";
 
 export function Heroes() {
 
-  var objArray = Array(6);
-
-  for(let i = 0; i < objArray.length; i++)
-  {
-    objArray[i] = <Heros nr={i}></Heros>;
-  }
-
   return (
     <main className="heroes">
-      <structure>{objArray}</structure>
+      <HeroesGrid maxHeight="5" maxWidth="12" maxDev="200"/>
       <h1>Online Experiences</h1>
       <p>
         Lorem Ipsum is simply dummy text
