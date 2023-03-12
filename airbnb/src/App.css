@@ -1,14 +1,17 @@
 body {
-    background-color: #666;
+    background-color: rgb(255, 224, 183);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .app {
     background-color: antiquewhite;
+    max-width: 1000px;
+    margin: auto;
+
+    border-radius: 10px;
 }
 
 header {
-    /* background-color: blue; */
 
     height: 100px;
     padding: 10px;
@@ -34,6 +37,46 @@ header > img{
 
 .card {
     font-size: 14px;
+    margin-left: 10px;
+
+    position: relative;
+    min-height: 410px;
+}
+
+.card--badge--red {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+
+    padding: 5px;
+
+    color: red;
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+
+    background-color: antiquewhite;
+}
+
+.card--badge--blue {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+
+    padding: 5px;
+
+    color: blue;
+
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 5px;
+
+    background-color: antiquewhite;
+}
+
+.card:first-child {
+    margin-left: 0px;
 }
 
 .card > img {
@@ -53,8 +96,23 @@ header > img{
     width: 10px;
 }
 
+.card--price--p {
+    position:absolute;
+    bottom: 0px;
+    left: 0px;
+}
+
 .card--price {
     font-weight: bold;
+}
+
+.card--title {
+    text-overflow: ellipsis;
+    overflow: auto;
+    width: 90%;
+    height: 50px;
+
+    margin-top: 5px;
 }
 
 .rectHor {
@@ -77,4 +135,28 @@ header > img{
     width: 60px;
     margin: 10px;
     box-shadow: 0px 10px 7px #696969;
+}
+
+.cardslist {
+    padding: 0px 50px;
+}
+
+.cardslist--cards {
+    display: flex;
+    overflow-x: auto;
+    width: 100%;
+}
+
+.cardslist--cards::-webkit-scrollbar {
+    height: 10px;
+}
+
+.cardslist--cards::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.25); 
+    border-radius: 10px;
+}
+
+.cardslist--cards::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.3); 
 }
