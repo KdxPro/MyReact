@@ -160,3 +160,15 @@ header > img{
     border-radius: 10px;
     -webkit-box-shadow: inset 0 0 10px rgba(0,0,0,0.3); 
 }
+
+footer {
+    margin-top: 10px;
+    text-align: center;
+
+    color: rgb(255, 178, 78);
+
+    border-top: solid;
+    border-width: 1px;
+    border-color: rgb(255, 204, 137);
+
+}
