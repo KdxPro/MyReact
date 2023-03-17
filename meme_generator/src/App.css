@@ -1,0 +1,46 @@
+body {
+  background-color: #666;
+}
+
+.App {
+  background-color: aliceblue;
+  max-width: 600px;
+  margin: auto;
+
+  font-family: 'Lucida Grande', sans-serif;
+}
+
+header {
+  background-image: linear-gradient(to bottom right, rgb(58, 32, 58), rgb(104, 59, 104));
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  height: 50px;
+  padding: 10px;
+}
+
+.header--logo_container {
+  display:  flex;
+  align-items: center;
+}
+
+.header--image {
+  height: 40px;
+}
+
+.header--title {
+  margin: 0px;
+  margin-left: 10px;
+
+  color: azure
+}
+
+.header--project {
+  margin: 0px;
+
+  text-align: right;
+
+  color: azure;
+}
