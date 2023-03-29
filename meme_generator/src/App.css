@@ -44,3 +44,50 @@ header {
 
   color: azure;
 }
+
+main {
+  padding: 25px;
+}
+
+.main--form {
+  display: grid;
+  grid-template-areas: 'in1 in2' 'b1 b1';
+  gap: 10px;
+}
+
+.main--input {
+  text-indent: 5px;
+
+  border: 2px solid #666;
+  border-radius: 5px;
+}
+
+.main--input:first-child {
+  grid-area: in1;
+
+}
+
+.main--input:nth-child(2){
+  grid-area: in2;
+}
+
+.main--button {
+  grid-area: b1;
+
+  background-image: linear-gradient(to bottom right, rgb(58, 32, 58), rgb(104, 59, 104));
+  color: azure;
+
+  padding: 5px;
+
+  cursor: pointer;
+
+  border: none;
+  border-radius: 5px;
+}
+
+.main--image {
+  margin: auto;
+  margin-top: 10px;
+
+  width: 100%; 
+}
