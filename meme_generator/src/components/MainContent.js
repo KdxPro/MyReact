@@ -1,18 +1,17 @@
 
 
 export function MainContent() {
-
+  
   let tmp = 0;
   
   function handleOnClick(e)
   {
-    e.preventDefault();
-
+    e.preventDefault(); 
     tmp = Math.floor(Math.random() * 10);
-
     console.log(tmp);
   }
-
+  
+  
   return (
     <main>
       <form className='main--form'>
