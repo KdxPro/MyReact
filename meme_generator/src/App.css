@@ -74,7 +74,7 @@ main {
 .main--button {
   grid-area: b1;
 
-  background-image: linear-gradient(to bottom right, rgb(58, 32, 58), rgb(104, 59, 104));
+  background-image: linear-gradient(to bottom right, rgb(60, 30, 60), rgb(110, 60, 110));
   color: azure;
 
   padding: 5px;
@@ -83,6 +83,10 @@ main {
 
   border: none;
   border-radius: 5px;
+}
+
+.main--button:hover {
+  background-image: linear-gradient(to bottom right, rgb(60, 30, 60), rgb(140, 90, 140));
 }
 
 .main--image {
