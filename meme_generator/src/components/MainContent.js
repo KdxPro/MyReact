@@ -17,9 +17,16 @@ export function MainContent(props) {
     setFavIcon((prevFavIcon) => !prevFavIcon);
   }
 
-  const [arrayBox, setArrayBox] = React.useState(Array(<Box />));
+  const boxStruct = { obj: <Box />, id: 1 };
+
+  const [arrayBox, setArrayBox] = React.useState(Array(boxStruct));
   function handleOnClickBox() {
-    setArrayBox((prevArrayBox) => [...prevArrayBox, <Box />]);
+    let tmpBoxStruct = boxStruct;
+    tmpBoxStruct.id = arrayBox.length + 1;
+    setArrayBox((prevArrayBox) => {
+      return [...prevArrayBox, tmpBoxStruct];
+    });
+    console.log(arrayBox);
   }
 
   return (
