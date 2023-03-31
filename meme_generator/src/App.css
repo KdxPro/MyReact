@@ -8,6 +8,8 @@ body {
   margin: auto;
 
   font-family: "Lucida Grande", sans-serif;
+
+  border-radius: 10px 0px 10px 0px;
 }
 
 header {
@@ -23,6 +25,8 @@ header {
 
   height: 50px;
   padding: 10px;
+
+  border-radius: 10px 0px 0px 0px;
 }
 
 .header--logo_container {
@@ -122,3 +126,28 @@ main {
 
   filter: drop-shadow(0px 0px 2px white);
 }
+
+.boxContainer {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.box {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(58, 32, 58),
+    rgb(104, 59, 104)
+  );
+
+  margin-left: 5px;
+
+  width: 100%;
+  height: 50px;
+}
+
+.box:first-child {
+  margin-left: 0px;
+}
+
+

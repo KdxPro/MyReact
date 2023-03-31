@@ -1,10 +1,10 @@
 import React from "react";
 
+import { Box } from "./Box";
 import { Star } from "./Star";
 
-export function MainContent() {
+export function MainContent(props) {
   const [randVal, setRandVal] = React.useState(0);
-
   function handleOnClick(e) {
     e.preventDefault();
 
@@ -13,9 +13,13 @@ export function MainContent() {
   }
 
   const [isFavIcon, setFavIcon] = React.useState(false);
-
   function handleOnClickFavIcon() {
     setFavIcon((prevFavIcon) => !prevFavIcon);
+  }
+
+  const [arrayBox, setArrayBox] = React.useState(Array(<Box />));
+  function handleOnClickBox() {
+    setArrayBox((prevArrayBox) => [...prevArrayBox, <Box />]);
   }
 
   return (
@@ -24,7 +28,7 @@ export function MainContent() {
         <input className="main--input" placeholder="Top text"></input>
         <input className="main--input" placeholder="Bottom text"></input>
         <button className="main--button" onClick={handleOnClick}>
-          Get a new meme image
+          Get a new {props.item} image
         </button>
       </form>
 
@@ -35,6 +39,9 @@ export function MainContent() {
           alt="main_image"
         ></img>
         <Star isFavIcon={isFavIcon} onClickHandle={handleOnClickFavIcon} />
+        <div className="boxContainer">
+          <Box arrayBox={arrayBox} onClick={handleOnClickBox} />
+        </div>
       </div>
     </main>
   );
