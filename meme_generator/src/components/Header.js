@@ -1,7 +1,5 @@
 import memeIcon from "../images/meme_icon.png";
 
-export default Header;
-
 export function Header(props) {
   return (
     <header>

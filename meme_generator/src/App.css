@@ -134,11 +134,11 @@ main {
 }
 
 .box {
-  background-image: linear-gradient(
+  /* background-image: linear-gradient( 
     to bottom right,
     rgb(58, 32, 58),
     rgb(104, 59, 104)
-  );
+  );*/
 
   margin-left: 5px;
 

@@ -7,7 +7,7 @@ import { MainContent } from "./components/MainContent";
 import { Footer } from "./components/Footer";
 
 function App() {
-  const usageItem = React.useState("Meme");
+  const [usageItem] = React.useState("Meme");
 
   return (
     <div className="App">
