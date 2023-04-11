@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Box } from "./Box";
+import { Boxes } from "./Boxes";
 import { Star } from "./Star";
 
 export function MainContent(props) {
@@ -15,16 +15,6 @@ export function MainContent(props) {
   const [isFavIcon, setFavIcon] = React.useState(false);
   function handleOnClickFavIcon() {
     setFavIcon((prevFavIcon) => !prevFavIcon);
-  }
-
-  const boxStruct = { obj: <Box />, id: 1, isSelected: true };
-
-  const [arrayBox, setArrayBox] = React.useState([boxStruct]);
-  function handleOnClickBox() {
-    let tmpBoxStruct = { ...boxStruct };
-    tmpBoxStruct.id = arrayBox[arrayBox.length - 1].id + 1;
-    tmpBoxStruct.isSelected = !arrayBox[arrayBox.length - 1].isSelected;
-    setArrayBox((prevArrayBox) => [...prevArrayBox, tmpBoxStruct]);
   }
 
   return (
@@ -45,7 +35,7 @@ export function MainContent(props) {
         ></img>
         <Star isFavIcon={isFavIcon} onClickHandle={handleOnClickFavIcon} />
         <div className="boxContainer">
-          <Box arrayBox={arrayBox} onClick={handleOnClickBox} />
+          <Boxes />
         </div>
       </div>
     </main>
