@@ -32,11 +32,9 @@ export function MainContent(props) {
           className="imageContainer--image"
           src={"https://picsum.photos/600/400?random=" + randVal}
           alt="main_image"
-        ></img>
+        />
         <Star isFavIcon={isFavIcon} onClickHandle={handleOnClickFavIcon} />
-        <div className="boxContainer">
-          <Boxes />
-        </div>
+        <Boxes />
       </div>
     </main>
   );

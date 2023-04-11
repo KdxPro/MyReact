@@ -13,5 +13,9 @@ export function Boxes() {
     setArrayBox((prevArrayBox) => [...prevArrayBox, tmpBoxStruct]);
   }
 
-  return <Box arrayBox={arrayBox} onClick={handleOnClickBox} />;
+  return (
+    <div className="boxContainer">
+      <Box arrayBox={arrayBox} onClick={handleOnClickBox} />
+    </div>
+  );
 }
