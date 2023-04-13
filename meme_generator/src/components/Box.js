@@ -1,14 +1,13 @@
 import React from "react";
 
 export function Box(props) {
-  return props.arrayBox.map((item) => (
-    <div
-      className="box"
-      style={{ backgroundColor: item.isSelected ? "blue" : "red" }}
-      onClick={props.onClick}
-      key={item.id}
-    >
-      {item.id}
-    </div>
-  ));
+  const [on, setOn] = React.useState(true);
+
+  function toggle() {
+    setOn((prevOn) => !prevOn);
+  }
+
+  return (
+    <div className="box" id={on ? "box_on" : "box_off"} onClick={toggle}></div>
+  );
 }
