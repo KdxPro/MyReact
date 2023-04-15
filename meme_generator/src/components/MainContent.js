@@ -34,7 +34,7 @@ export function MainContent(props) {
           alt="main_image"
         />
         <Star isFavIcon={isFavIcon} onClickHandle={handleOnClickFavIcon} />
-        <Boxes quantity={10}/>
+        <Boxes quantity={5}/>
       </div>
     </main>
   );

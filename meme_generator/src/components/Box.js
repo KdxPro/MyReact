@@ -1,6 +1,6 @@
 import React from "react";
 
-export function Box(props) {
+export function Box() {
   const [on, setOn] = React.useState(true);
 
   function toggle() {
