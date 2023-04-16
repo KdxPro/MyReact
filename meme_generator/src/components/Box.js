@@ -29,10 +29,11 @@ export function Box(props) {
         className={delClassName}
         src={delIcon}
         alt="del_icon"
-        onClick={props.onDelClick}
+        onClick={() => props.onDelClick(props.boxId)}
         onMouseEnter={changeDelIconRed}
         onMouseLeave={changeDelIconDef}
       ></img>
+      {props.boxId}
     </div>
   );
 }
