@@ -20,7 +20,7 @@ export function MainContent(props) {
   }
 
   const [topText, setTopText] = React.useState("");
-  const changeTopText = (event) => {
+  function changeTopText(event){
     setTopText(event.target.value);
   };
 
