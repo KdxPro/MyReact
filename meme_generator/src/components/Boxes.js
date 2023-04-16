@@ -13,6 +13,8 @@ export function Boxes(props) {
   const [finalArrayBox, modifyArray] = React.useState(arrayBox);
 
   function addToFinalArrayBox() {
+    if (finalArrayBox.length >= 20) return;
+
     modifyArray((prevFinalArrayBox) => {
       let ind = 0;
       for (let i = 0; i < 100; i++) {
