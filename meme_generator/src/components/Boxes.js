@@ -6,14 +6,21 @@ import { AddBox } from "./AddBox";
 export function Boxes(props) {
   const arrayBox = new Array(props.quantity)
     .fill()
-    .map((_, index) => <Box key={index} />);
+    .map((_, index) => <Box key={index} onDelClick={delFromFinalArrayBox} />);
 
-  const [finalArrayBox, addElem] = React.useState(arrayBox);
+  const [finalArrayBox, modifyArray] = React.useState(arrayBox);
+
   function addToFinalArrayBox() {
-    addElem((prevFinalArrayBox) => [
+    modifyArray((prevFinalArrayBox) => [
       ...prevFinalArrayBox,
-      <Box key={finalArrayBox.length} />,
+      <Box key={finalArrayBox.length} onDelClick={delFromFinalArrayBox} />,
     ]);
+  }
+
+  function delFromFinalArrayBox() {
+    modifyArray((prevFinalArrayBox) =>
+      prevFinalArrayBox.slice(0, prevFinalArrayBox.length - 1)
+    );
   }
 
   return (
