@@ -129,6 +129,30 @@ main {
   filter: drop-shadow(0px 0px 2px white);
 }
 
+.topText {
+  position: absolute;
+  top: 20px;
+
+  width: 100%;
+
+  overflow-wrap: break-word;
+  text-align: center;
+  color: azure;
+  filter: drop-shadow(0px 0px 3px black);
+}
+
+.bottomText {
+  position: absolute;
+  bottom: 70px;
+
+  width: 100%;
+
+  overflow-wrap: break-word;
+  text-align: center;
+  color: azure;
+  filter: drop-shadow(0px 0px 3px black);
+}
+
 .boxContainer {
   display: flex;
 
