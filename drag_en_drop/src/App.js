@@ -13,6 +13,8 @@ function App() {
   return (
     <div className="App" onMouseMove={handleMouseMove}>
       <DragEnDrop mousePosition={mPos} />
+      <DragEnDrop mousePosition={mPos} />
+      <DragEnDrop mousePosition={mPos} />
     </div>
   );
 }
