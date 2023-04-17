@@ -3,16 +3,26 @@ body {
 }
 
 .App {
-  max-width: 1000px;
-  width: 100px;
   background-color: aliceblue;
+  max-width: 600px;
+  height: 500px;
+  margin: auto;
+
+  padding: 10px;
+
+  font-family: "Lucida Grande", sans-serif;
+
+  border-radius: 10px 0px 10px 0px;
 
   position: relative;
 }
 
 .dragendrop {
   width: 50px;
+  height: 50px;
   background-color: red;
+
+  left: 0px;
 
   position: absolute;
 }
