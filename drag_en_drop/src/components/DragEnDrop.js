@@ -1,60 +1,42 @@
-import React from "react";
+import { useEffect, useState } from "react";
 
-export function DragEnDrop(props) {
-  let corr = { x: 0, y: 0 };
-  let styles = { left: corr.x, top: corr.y };
+export function DragEnDrop() {
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = useState(false);
 
-  const [lastMousCorr, setlastMousCorr] = React.useState({ x: 0, y: 0 });
-  const [lastShapeCorr, setlastShapeCorr] = React.useState({ x: 0, y: 0 });
+  const [lastMousCorr, setlastMousCorr] = useState({ x: 0, y: 0 });
+  const [lastShapeCorr, setlastShapeCorr] = useState({ x: 0, y: 0 });
 
-  const [isClicked, setIsClicked] = React.useState(false);
-  function changeIsClicked() {
-    setIsClicked((prevIsClicked) => !prevIsClicked);
-
-    setlastMousCorr({ x: props.mousePosition.x, y: props.mousePosition.y });
-    setlastShapeCorr({ x: finalCorr.x, y: finalCorr.y });
-  }
-
-  const [finalCorr, setFinalCorr] = React.useState(corr);
-  function changeFinalCorr(x, y) {
-    setFinalCorr({
-      x: lastShapeCorr.x + x,
-      y: lastShapeCorr.y + y,
-    });
-
-    changeFinalStyles(finalCorr.x, finalCorr.y);
-  }
-
-  const [finalStyles, setFinalStyles] = React.useState(styles);
-  function changeFinalStyles(x, y) {
-    setFinalStyles({ left: x, top: y });
-  }
-
-  // function tmp() {
-  //   if (isClicked)
-  //     changeFinalCorr(
-  //       props.mousePosition.x - lastMousCorr.x,
-  //       props.mousePosition.y - lastMousCorr.y
-  //     );
-  //   console.log(1);
-  // }
-  // console.log(2);
-
-  function tmp() {
-    if (isClicked) {
-      changeFinalCorr(
-        props.mousePosition.x - lastMousCorr.x,
-        props.mousePosition.y - lastMousCorr.y
-      );
+  useEffect(() => {
+    const listener = (event) => {
+      setPosition({
+        x: lastShapeCorr.x + (event.x - lastMousCorr.x),
+        y: lastShapeCorr.y + (event.y - lastMousCorr.y),
+      });
+    };
+    if (isDragging) {
+      window.addEventListener("mousemove", listener);
+      return () => window.removeEventListener("mousemove", listener);
     }
-  }
+  }, [isDragging]);
+
+  const handleClick = (event) => {
+    setIsDragging((prev) => !prev);
+    setlastMousCorr({ x: event.clientX, y: event.clientY });
+    setlastShapeCorr({ x: position.x, y: position.y });
+
+    console.log(event.clientX, event.clientY);
+    console.log(position.x, position.y);
+  };
 
   return (
     <div
       className="dragendrop"
-      style={finalStyles}
-      onClick={changeIsClicked}
-      onMouseMove={tmp}
-    ></div>
+      style={{
+        left: position.x,
+        top: position.y,
+      }}
+      onClick={handleClick}
+    />
   );
 }
