@@ -1,11 +1,15 @@
-import { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
-export function DragEnDrop() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-  const [isDragging, setIsDragging] = useState(false);
+export function DragEnDrop(props) {
+  const [position, setPosition] = React.useState({
+    x: props.Object.props.style.styles.left,
+    y: props.Object.props.style.styles.top,
+  });
 
-  const [lastMousCorr, setlastMousCorr] = useState({ x: 0, y: 0 });
-  const [lastShapeCorr, setlastShapeCorr] = useState({ x: 0, y: 0 });
+  const [isDragging, setIsDragging] = React.useState(false);
+
+  const [lastMousCorr, setlastMousCorr] = React.useState({ x: 0, y: 0 });
+  const [lastShapeCorr, setlastShapeCorr] = React.useState({ x: 0, y: 0 });
 
   useEffect(() => {
     const listener = (event) => {
@@ -20,23 +24,17 @@ export function DragEnDrop() {
     }
   }, [isDragging]);
 
-  const handleClick = (event) => {
+  function handleClick(event) {
     setIsDragging((prev) => !prev);
     setlastMousCorr({ x: event.clientX, y: event.clientY });
     setlastShapeCorr({ x: position.x, y: position.y });
+  }
 
-    console.log(event.clientX, event.clientY);
-    console.log(position.x, position.y);
-  };
-
-  return (
-    <div
-      className="dragendrop"
-      style={{
-        left: position.x,
-        top: position.y,
-      }}
-      onClick={handleClick}
-    />
-  );
+  return React.cloneElement(props.Object, {
+    onClick: handleClick,
+    style: {
+      left: position.x,
+      top: position.y,
+    },
+  });
 }
