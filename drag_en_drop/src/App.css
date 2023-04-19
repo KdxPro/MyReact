@@ -4,11 +4,11 @@ body {
 
 .App {
   background-color: aliceblue;
-  max-width: 600px;
+  max-width: 300px;
   height: 500px;
   margin: auto;
 
-  padding: 10px;
+  /* padding: 10px; */
 
   font-family: "Lucida Grande", sans-serif;
 
@@ -19,7 +19,12 @@ body {
 
 .dragendrop {
   position: absolute;
-  border: solid 3px black;
+  outline: solid 3px black;
+  outline-offset: -3px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 #Elem1 {

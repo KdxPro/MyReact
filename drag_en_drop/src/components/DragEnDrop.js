@@ -6,6 +6,7 @@ export function DragEnDrop(props) {
     y: props.Object.props.style.styles.top,
   });
 
+  const [mPos, setMpos] = React.useState({ x: 0, y: 0 });
   const [isDragging, setIsDragging] = React.useState(false);
   const [lastMousCorr, setlastMousCorr] = React.useState({ x: 0, y: 0 });
   const [lastShapeCorr, setlastShapeCorr] = React.useState({ x: 0, y: 0 });
@@ -14,45 +15,52 @@ export function DragEnDrop(props) {
     y0: 0,
     x_1: 0,
     y_1: 0,
+    x_v0: 0,
+    y_v0: 0,
   });
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      getMotionPos((prevMotionPos) => ({
-        x0: position.x,
-        y0: position.y,
-        x_1: prevMotionPos.x0,
-        y_1: prevMotionPos.y0,
-      }));
-      console.log(motionPos.x0 - motionPos.x_1);
-    }, 20);
+  function intervalUpdate() {
+    setPosition({
+      x:
+        lastShapeCorr.x + (mPos.x - lastMousCorr.x) > 300 - 50
+          ? 300 - 50
+          : lastShapeCorr.x + (mPos.x - lastMousCorr.x) < 0
+          ? 0
+          : lastShapeCorr.x + (mPos.x - lastMousCorr.x),
+      y:
+        lastShapeCorr.y + (mPos.y - lastMousCorr.y) > 500 - 50
+          ? 500 - 50
+          : lastShapeCorr.y + (mPos.y - lastMousCorr.y) < 0
+          ? 0
+          : lastShapeCorr.y + (mPos.y - lastMousCorr.y),
+    });
 
-    return () => clearInterval(interval);
-  }, [motionPos, position]);
-
-  let mutex = false;
-  function setMutex(val) {
-    mutex = val;
+    getMotionPos((prevMotionPos) => ({
+      x0: position.x,
+      y0: position.y,
+      x_1: prevMotionPos.x0,
+      y_1: prevMotionPos.y0,
+      x_v0: position.x - prevMotionPos.x0,
+      y_v0: position.y - prevMotionPos.y0,
+    }));
   }
 
   useEffect(() => {
+    const interval = setInterval(intervalUpdate, 20);
+
+    return () => clearInterval(interval);
+  }, [position]);
+
+  useEffect(() => {
     const listener = (event) => {
-      if (mutex) return;
-
-      setMutex(true);
-      setTimeout(setMutex, 20, false);
-
-      setPosition({
-        x: lastShapeCorr.x + (event.x - lastMousCorr.x),
-        y: lastShapeCorr.y + (event.y - lastMousCorr.y),
-      });
+      setMpos({ x: event.x, y: event.y });
     };
 
     if (isDragging) {
       window.addEventListener("mousemove", listener);
       return () => window.removeEventListener("mousemove", listener);
     }
-  }, [isDragging, lastMousCorr, lastShapeCorr, mutex]);
+  }, [isDragging]);
 
   function handleOnMouseDown(event) {
     setIsDragging(true);
@@ -71,5 +79,6 @@ export function DragEnDrop(props) {
       left: position.x,
       top: position.y,
     },
+    children: String(motionPos.x_v0) + " " + String(motionPos.y_v0),
   });
 }
