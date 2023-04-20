@@ -34,12 +34,14 @@ export function MainContent(props) {
           placeholder="Top text"
           onChange={handleFormChange}
           name="topText"
+          value={form.topText}
         ></input>
         <input
           className="main--input"
           placeholder="Bottom text"
           onChange={handleFormChange}
           name="bottomText"
+          value={form.bottomText}
         ></input>
         <button className="main--button" onClick={handleOnClick}>
           Get a new {props.item} image
