@@ -19,15 +19,12 @@ export function MainContent(props) {
     setFavIcon((prevFavIcon) => !prevFavIcon);
   }
 
-  const [topText, setTopText] = React.useState("");
-  function changeTopText(event){
-    setTopText(event.target.value);
-  };
-
-  const [bottomText, setBottomText] = React.useState("");
-  const changeBottomText = (event) => {
-    setBottomText(event.target.value);
-  };
+  const [form, setForm] = React.useState({ topText: "", bottomText: "" });
+  function handleFormChange(event) {
+    setForm((prevForm) => {
+      return { ...prevForm, [event.target.name]: event.target.value };
+    });
+  }
 
   return (
     <main>
@@ -35,12 +32,14 @@ export function MainContent(props) {
         <input
           className="main--input"
           placeholder="Top text"
-          onChange={changeTopText}
+          onChange={handleFormChange}
+          name="topText"
         ></input>
         <input
           className="main--input"
           placeholder="Bottom text"
-          onChange={changeBottomText}
+          onChange={handleFormChange}
+          name="bottomText"
         ></input>
         <button className="main--button" onClick={handleOnClick}>
           Get a new {props.item} image
@@ -53,8 +52,8 @@ export function MainContent(props) {
           src={"https://picsum.photos/600/400?random=" + randVal}
           alt="main_image"
         />
-        <TopText text={topText} />
-        <BottomText text={bottomText} />
+        <TopText text={form.topText} />
+        <BottomText text={form.bottomText} />
         <Star isFavIcon={isFavIcon} onClickHandle={handleOnClickFavIcon} />
         <Boxes quantity={5} />
       </div>
