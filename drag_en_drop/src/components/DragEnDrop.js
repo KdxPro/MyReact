@@ -15,34 +15,40 @@ export function DragEnDrop(props) {
     y0: 0,
     x_1: 0,
     y_1: 0,
-    x_v0: 0,
+    x_v0: 1,
     y_v0: 0,
   });
 
-  function intervalUpdate() {
-    setPosition({
-      x:
-        lastShapeCorr.x + (mPos.x - lastMousCorr.x) > 300 - 50
-          ? 300 - 50
-          : lastShapeCorr.x + (mPos.x - lastMousCorr.x) < 0
-          ? 0
-          : lastShapeCorr.x + (mPos.x - lastMousCorr.x),
-      y:
-        lastShapeCorr.y + (mPos.y - lastMousCorr.y) > 500 - 50
-          ? 500 - 50
-          : lastShapeCorr.y + (mPos.y - lastMousCorr.y) < 0
-          ? 0
-          : lastShapeCorr.y + (mPos.y - lastMousCorr.y),
-    });
+  let newPosX = 0;
+  let newPosY = 0;
 
+  function intervalUpdate() {
     getMotionPos((prevMotionPos) => ({
-      x0: position.x,
-      y0: position.y,
+      x0: newPosX + prevMotionPos.x_v0,
+      y0: newPosY + prevMotionPos.y_v0,
       x_1: prevMotionPos.x0,
       y_1: prevMotionPos.y0,
-      x_v0: position.x - prevMotionPos.x0,
-      y_v0: position.y - prevMotionPos.y0,
+      // x_v0: prevMotionPos.x_v0,
+      // y_v0: prevMotionPos.y_v0,
+      x_v0: newPosX - prevMotionPos.x0,
+      y_v0: newPosY - prevMotionPos.y0,
     }));
+
+    newPosX = isDragging
+      ? lastShapeCorr.x + (mPos.x - lastMousCorr.x)
+      : motionPos.x0;
+    newPosY = isDragging
+      ? lastShapeCorr.y + (mPos.y - lastMousCorr.y)
+      : motionPos.y0;
+
+    if (newPosX > 300 - 50) newPosX = 300 - 50;
+    if (newPosX < 0) newPosX = 0;
+    if (newPosY > 500 - 50) newPosY = 500 - 50;
+    if (newPosY < 0) newPosY = 0;
+
+    setPosition({ x: newPosX, y: newPosY });
+
+    // console.log("pos2", motionPos);
   }
 
   useEffect(() => {
@@ -64,7 +70,7 @@ export function DragEnDrop(props) {
 
   function handleOnMouseDown(event) {
     setIsDragging(true);
-    setlastMousCorr({ x: event.clientX, y: event.clientY });
+    setlastMousCorr({ x: event.clientX, y: event.clientY});
     setlastShapeCorr({ x: position.x, y: position.y });
   }
 

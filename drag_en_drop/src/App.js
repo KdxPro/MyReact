@@ -13,8 +13,8 @@ function App() {
   return (
     <div className="App">
       <DragEnDrop Object={obj1} />
-      <DragEnDrop Object={obj2} />
-      <DragEnDrop Object={obj1} />
+      {/* <DragEnDrop Object={obj2} /> */}
+      {/* <DragEnDrop Object={obj1} /> */}
     </div>
   );
 }
