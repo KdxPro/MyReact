@@ -80,6 +80,39 @@ main {
   grid-area: in2;
 }
 
+.main--isGoodContainer {
+  margin-top: 5px;
+  padding: 5px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  color: azure;
+
+  border-radius: 5px;
+}
+
+#main--isGoodContainer_red {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(90, 30, 30),
+    rgb(200, 60, 60)
+  );
+}
+
+#main--isGoodContainer_green {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(32, 58, 36),
+    rgb(59, 104, 65)
+  );
+}
+
+.main--isGood {
+  cursor: pointer;
+}
+
 .main--button {
   grid-area: b1;
 

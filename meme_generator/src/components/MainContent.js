@@ -19,10 +19,15 @@ export function MainContent(props) {
     setFavIcon((prevFavIcon) => !prevFavIcon);
   }
 
-  const [form, setForm] = React.useState({ topText: "", bottomText: "" });
+  const [form, setForm] = React.useState({
+    topText: "",
+    bottomText: "",
+    isGood: true,
+  });
   function handleFormChange(event) {
+    const { name, value, type, checked } = event.target;
     setForm((prevForm) => {
-      return { ...prevForm, [event.target.name]: event.target.value };
+      return { ...prevForm, [name]: type === "checkbox" ? checked : value };
     });
   }
 
@@ -58,6 +63,25 @@ export function MainContent(props) {
         <BottomText text={form.bottomText} />
         <Star isFavIcon={isFavIcon} onClickHandle={handleOnClickFavIcon} />
         <Boxes quantity={5} />
+      </div>
+      <div
+        className="main--isGoodContainer"
+        id={
+          form.isGood
+            ? "main--isGoodContainer_green"
+            : "main--isGoodContainer_red"
+        }
+      >
+        <input
+          type="checkbox"
+          className="main--isGood"
+          checked={form.isGood}
+          onChange={handleFormChange}
+          name="isGood"
+        />
+        <label htmlFor="isGood">
+          Is this App good? {form.isGood ? ":)" : ":("}
+        </label>
       </div>
     </main>
   );
