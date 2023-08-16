@@ -23,6 +23,7 @@ export function MainContent(props) {
     topText: "",
     bottomText: "",
     isGood: true,
+    employment: "",
   });
   function handleFormChange(event) {
     const { name, value, type, checked } = event.target;
@@ -82,6 +83,39 @@ export function MainContent(props) {
         <label htmlFor="isGood">
           Is this App good? {form.isGood ? ":)" : ":("}
         </label>
+      </div>
+      <div className="main--radioContainer">
+        <legend>Current employment status</legend>
+        <input
+          type="radio"
+          id="unemployed"
+          name="employment"
+          value="unemployed"
+          checked={form.employment === "unemployed"}
+          onChange={handleFormChange}
+        ></input>
+        <label htmlFor="radioButton">Unemployed</label>
+        <br />
+        <input
+          type="radio"
+          id="part-time"
+          name="employment"
+          value="part-time"
+          checked={form.employment === "part-time"}
+          onChange={handleFormChange}
+        ></input>
+        <label htmlFor="radioButton">Part-time</label>
+        <br />
+        <input
+          type="radio"
+          id="full-time"
+          name="employment"
+          value="full-time"
+          checked={form.employment === "full-time"}
+          onChange={handleFormChange}
+        ></input>
+        <label htmlFor="radioButton">Full-time</label>
+        <br />
       </div>
     </main>
   );
