@@ -115,7 +115,6 @@ export function MainContent(props) {
           onChange={handleFormChange}
         ></input>
         <label htmlFor="radioButton">Full-time</label>
-        <br />
       </div>
     </main>
   );
