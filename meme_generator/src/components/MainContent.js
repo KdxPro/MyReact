@@ -24,6 +24,7 @@ export function MainContent(props) {
     bottomText: "",
     isGood: true,
     employment: "",
+    favColor: "",
   });
   function handleFormChange(event) {
     const { name, value, type, checked } = event.target;
@@ -115,6 +116,21 @@ export function MainContent(props) {
           onChange={handleFormChange}
         ></input>
         <label htmlFor="radioButton">Full-time</label>
+      </div>
+      <br />
+      <div className="main--favColor">
+        <select
+          id="favColor"
+          value={form.favColor}
+          onchange={handleFormChange}
+          name="favColor"
+        >
+          <option value="choose">--Choose--</option>
+          <option value="red">Red</option>
+          <option value="green">Green</option>
+          <option value="blue">Blue</option>
+          <option value="White">White</option>
+        </select>
       </div>
     </main>
   );
