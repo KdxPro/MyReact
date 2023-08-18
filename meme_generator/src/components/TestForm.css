@@ -38,6 +38,10 @@
 .form--favColor > select {
   width: 100px;
   height: 100%;
+
+  border-radius: 3px;
+
+  background-color: azure;
 }
 
 .form--submit {
@@ -47,4 +51,8 @@
 .form--submit > button {
   width: 100px;
   height: 100%;
+
+  border-radius: 3px;
+  background-color: azure;
+  border: 0px;
 }
