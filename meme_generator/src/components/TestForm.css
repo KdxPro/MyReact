@@ -1,0 +1,50 @@
+.form {
+  text-indent: 5px;
+
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(58, 32, 58),
+    rgb(104, 59, 104)
+  );
+  border: 2px solid rgb(110, 60, 110);
+  outline-color: rgb(60, 30, 60);
+  border-radius: 5px;
+  color: azure;
+
+  display: grid;
+  /* place-items: center; */
+  justify-content: space-between;
+  grid-template-areas: "rc fc" "rc s";
+  gap: 5px;
+  padding: 10px;
+
+  margin-top: 10px;
+}
+
+.form--radioContainer {
+  grid-area: rc;
+  display: flex;
+  flex-direction: column;
+}
+
+.input_label {
+  font-size: 13px;
+}
+
+.form--favColor {
+  grid-area: fc;
+}
+
+.form--favColor > select {
+  width: 100px;
+  height: 100%;
+}
+
+.form--submit {
+  grid-area: s;
+}
+
+.form--submit > button {
+  width: 100px;
+  height: 100%;
+}

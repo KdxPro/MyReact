@@ -1,4 +1,5 @@
 import React from "react";
+import "./TestForm.css";
 
 export function TestForm(props) {
   function handleSubmit(e) {
@@ -10,38 +11,41 @@ export function TestForm(props) {
   return (
     <form onSubmit={handleSubmit} className="form">
       <div className="form--radioContainer">
-        <legend>Current employment status</legend>
-        <input
-          type="radio"
-          id="unemployed"
-          name="employment"
-          value="unemployed"
-          checked={props.form.employment === "unemployed"}
-          onChange={props.onFormChange}
-        ></input>
-        <label htmlFor="radioButton">Unemployed</label>
-        <br />
-        <input
-          type="radio"
-          id="part-time"
-          name="employment"
-          value="part-time"
-          checked={props.form.employment === "part-time"}
-          onChange={props.onFormChange}
-        ></input>
-        <label htmlFor="radioButton">Part-time</label>
-        <br />
-        <input
-          type="radio"
-          id="full-time"
-          name="employment"
-          value="full-time"
-          checked={props.form.employment === "full-time"}
-          onChange={props.onFormChange}
-        ></input>
-        <label htmlFor="radioButton">Full-time</label>
+        <legend>Current employment status:</legend>
+        <div className="input_label">
+          <input
+            type="radio"
+            id="unemployed"
+            name="employment"
+            value="unemployed"
+            checked={props.form.employment === "unemployed"}
+            onChange={props.onFormChange}
+          ></input>
+          <label htmlFor="radioButton">Unemployed</label>
+        </div>
+        <div className="input_label">
+          <input
+            type="radio"
+            id="part-time"
+            name="employment"
+            value="part-time"
+            checked={props.form.employment === "part-time"}
+            onChange={props.onFormChange}
+          ></input>
+          <label htmlFor="radioButton">Part-time</label>
+        </div>
+        <div className="input_label">
+          <input
+            type="radio"
+            id="full-time"
+            name="employment"
+            value="full-time"
+            checked={props.form.employment === "full-time"}
+            onChange={props.onFormChange}
+          ></input>
+          <label htmlFor="radioButton">Full-time</label>
+        </div>
       </div>
-      <br />
       <div className="form--favColor">
         <select
           id="favColor"
