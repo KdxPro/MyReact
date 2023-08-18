@@ -4,6 +4,7 @@ import { Boxes } from "./Boxes";
 import { Star } from "./Star";
 import { TopText } from "./TopText";
 import { BottomText } from "./BottomText";
+import { TestForm } from "./TestForm";
 
 export function MainContent(props) {
   const [randVal, setRandVal] = React.useState(0);
@@ -26,6 +27,7 @@ export function MainContent(props) {
     employment: "",
     favColor: "",
   });
+
   function handleFormChange(event) {
     const { name, value, type, checked } = event.target;
     setForm((prevForm) => {
@@ -85,53 +87,7 @@ export function MainContent(props) {
           Is this App good? {form.isGood ? ":)" : ":("}
         </label>
       </div>
-      <div className="main--radioContainer">
-        <legend>Current employment status</legend>
-        <input
-          type="radio"
-          id="unemployed"
-          name="employment"
-          value="unemployed"
-          checked={form.employment === "unemployed"}
-          onChange={handleFormChange}
-        ></input>
-        <label htmlFor="radioButton">Unemployed</label>
-        <br />
-        <input
-          type="radio"
-          id="part-time"
-          name="employment"
-          value="part-time"
-          checked={form.employment === "part-time"}
-          onChange={handleFormChange}
-        ></input>
-        <label htmlFor="radioButton">Part-time</label>
-        <br />
-        <input
-          type="radio"
-          id="full-time"
-          name="employment"
-          value="full-time"
-          checked={form.employment === "full-time"}
-          onChange={handleFormChange}
-        ></input>
-        <label htmlFor="radioButton">Full-time</label>
-      </div>
-      <br />
-      <div className="main--favColor">
-        <select
-          id="favColor"
-          value={form.favColor}
-          onchange={handleFormChange}
-          name="favColor"
-        >
-          <option value="choose">--Choose--</option>
-          <option value="red">Red</option>
-          <option value="green">Green</option>
-          <option value="blue">Blue</option>
-          <option value="White">White</option>
-        </select>
-      </div>
+      <TestForm form={form} onFormChange={handleFormChange}/>
     </main>
   );
 }
