@@ -1,0 +1,51 @@
+.signUpForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 200px;
+
+  margin-top: 10px;
+  padding: 15px;
+
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(30, 50, 60),
+    rgb(60, 100, 100)
+  );
+  border: 2px solid rgb(60, 98, 110);
+  outline-color: rgb(60, 30, 60);
+  border-radius: 5px;
+  color: azure;
+  text-indent: 5px;
+}
+
+.signUpForm--JoinNewsletterContainer {
+  font-size: 12px;
+  align-items: center;
+
+  margin-top: 10px;
+
+  display: flex;
+}
+
+.signUpForm--password {
+  margin-top: 10px;
+}
+
+.signUpForm--confirmPassword {
+  margin-top: 10px;
+}
+
+.signUpForm--submit > button {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(50, 100, 120),
+    rgb(100, 200, 220)
+  );
+  border-radius: 3px;
+  border: 0px;
+  margin-top: 10px;
+
+  color: azure;
+}

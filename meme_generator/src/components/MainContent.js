@@ -5,6 +5,7 @@ import { Star } from "./Star";
 import { TopText } from "./TopText";
 import { BottomText } from "./BottomText";
 import { TestForm } from "./TestForm";
+import { SignUpForm } from "./SignUpForm";
 
 export function MainContent(props) {
   const [randVal, setRandVal] = React.useState(0);
@@ -87,7 +88,8 @@ export function MainContent(props) {
           Is this App good? {form.isGood ? ":)" : ":("}
         </label>
       </div>
-      <TestForm form={form} onFormChange={handleFormChange}/>
+      <TestForm form={form} onFormChange={handleFormChange} />
+      <SignUpForm />
     </main>
   );
 }
