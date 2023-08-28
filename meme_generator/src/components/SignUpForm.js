@@ -1,7 +1,7 @@
 import React from "react";
 import "./SignUpForm.css";
 
-export function SignUpForm(props) {
+export function SignUpForm() {
   const [form, setForm] = React.useState({
     email: "",
     password: "",
@@ -18,7 +18,16 @@ export function SignUpForm(props) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(props.form);
+
+    if (form.password === form.confirmPassword)
+      console.log("passwords are the same");
+    else {
+      console.log("passwords are not the same");
+      return;
+    }
+
+    if (form.joinNewsletter === true) console.log("thanks for joining us");
+    else console.log("you're bad");
   }
 
   return (
