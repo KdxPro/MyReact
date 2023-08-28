@@ -57,7 +57,7 @@ export function SignUpForm(props) {
       </div>
 
       <div className="signUpForm--submit">
-        <button>Submit</button>
+        <button className="btn1">Submit</button>
       </div>
     </form>
   );
