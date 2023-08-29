@@ -36,6 +36,15 @@ export function MainContent(props) {
     });
   }
 
+  const [allMemes, setAllMemes] = React.useState([]);
+  React.useEffect(function () {
+    fetch("https://api.imgflip.com/get_memes")
+      .then((res) => res.json())
+      .then((data) => setAllMemes(data.data.memes));
+  }, []);
+
+  console.log(allMemes);
+
   return (
     <main>
       <form className="main--form">
@@ -57,7 +66,6 @@ export function MainContent(props) {
           Get a new {props.item} image
         </button>
       </form>
-
       <div className="main--imageContainer">
         <img
           className="imageContainer--image"
