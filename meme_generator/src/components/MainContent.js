@@ -6,6 +6,7 @@ import { TopText } from "./TopText";
 import { BottomText } from "./BottomText";
 import { TestForm } from "./TestForm";
 import { SignUpForm } from "./SignUpForm";
+import { WindowTracker } from "./WindowTracker";
 
 export function MainContent(props) {
   const [randVal, setRandVal] = React.useState(0);
@@ -97,7 +98,10 @@ export function MainContent(props) {
         </label>
       </div>
       <TestForm form={form} onFormChange={handleFormChange} />
-      <SignUpForm />
+      <div className="SUF_WT_container">
+        <SignUpForm />
+        <WindowTracker />
+      </div>
     </main>
   );
 }

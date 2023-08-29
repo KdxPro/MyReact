@@ -274,3 +274,9 @@ main {
 
   opacity: 50%;
 }
+
+.SUF_WT_container{
+  display: flex;
+
+  margin-top: 10px;
+}
