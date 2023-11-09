@@ -15,10 +15,10 @@ export function WindowTracker() {
     }
 
     window.addEventListener("resize", watchWidth);
-    console.log("add");
+    //console.log("add");
 
     return function () {
-      console.log("remove");
+      //console.log("remove");
       window.removeEventListener("resize", watchWidth);
     };
   }, []);

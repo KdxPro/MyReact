@@ -30,21 +30,17 @@ export function MainContent(props) {
     favColor: "",
   });
 
+  console.log(form);
+
   function handleFormChange(event) {
     const { name, value, type, checked } = event.target;
+
+    console.log(event.target.name);
+
     setForm((prevForm) => {
       return { ...prevForm, [name]: type === "checkbox" ? checked : value };
     });
   }
-
-  const [allMemes, setAllMemes] = React.useState([]);
-  React.useEffect(function () {
-    fetch("https://api.imgflip.com/get_memes")
-      .then((res) => res.json())
-      .then((data) => setAllMemes(data.data.memes));
-  }, []);
-
-  console.log(allMemes);
 
   return (
     <main>
